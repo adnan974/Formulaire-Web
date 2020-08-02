@@ -1,0 +1,11 @@
+/*.col-sm{
+    background-color: blue;
+}
+.col-lg{
+    background-color: red;
+}*/
+
+.ErrorInputSyntax{
+    color:red;
+    visibility: hidden;
+}

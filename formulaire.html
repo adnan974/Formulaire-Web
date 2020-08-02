@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <form id="my_form">
+            <div class="form-radio">
+                <div>
+                    <label for="sexe_masculin">M.</label>
+                    <input type="radio" name="sexe" id="sexe_masculin" value="M" />
+                </div>
+                <div>
+                    <label for="sexe_feminin">Mme.</label>
+                    <input type="radio" name="sexe" id="sexe_feminin" value="Mme" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" />
+                <small class = "ErrorInputSyntax">Nom incorrect !</small>
+
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prenom</label>
+                <input type="text" class="form-control" id="prenom" name="prenom" />
+            </div>
+            <div class="form-group">
+                <label for="age">age</label>
+                <input type="text" id="age" class="form-control" name="age" />
+            </div>
+            <div class="form-group">
+                <label for="pseudo">pseudo</label>
+                <input type="text" id="pseudo" class="form-control" name="pseudo" />
+            </div>
+            <div class="form-group">
+                <label for="mdp">mot de passe</label>
+                <input type="password" id="mdp" class="form-control" name="mdp" />
+            </div>
+            <div class="form-group">
+                <label for="mdp_confirmation">confirmation du mot de passe</label>
+                <input type="password" id="mdp_confirmation" class="form-control" name="mdp_confirmation" />
+            </div>
+
+            <div class="form-group">
+                <label for="pays">Choix du pays</label>
+                <select type="password" id="pays" class="form-control">
+                    <option>France</option>
+                    <option>Reunion</option>
+                    <option>Belgique</option>
+                    <option>Suisse</option>
+                    <option>Luxembourg</option>
+                </select>
+            </div>
+
+            <div class="form-checkbox">
+                <label for="mail_notif">recevoir des e-mail ?</label>
+                <div class="col-lg-12">
+                    <input type="checkbox" id="mail_notif" name="mail_notif" />
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
+
+
+    </form>
+    </div>
+    <!--<script>
+
+
+        var myForm = document.getElementById('my_form');
+
+        myForm.addEventListener('submit', function (e) {
+            let nameId = document.getElementById('name');
+            
+            alert('Vous avez envoyé le formulaire !\n\nMais celui-ci a été bloqué pour que vous ne changiez pas de page.');
+
+        });
+
+        myForm.addEventListener('reset', function (e) {
+            alert('Vous avez réinitialisé le formulaire !');
+        });
+    </script>-->
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
