@@ -26,12 +26,13 @@ function verifyPseudoInput(pseudo){
 
 function verifyMdpInput(mdp){
     let result = false;
-    let mdpLength = pseudo.length;
+    let mdpLength = mdp.length;
     if(mdpLength > 5){
         result = true;
     }
     return result;
 }
+
 
 function verifyIfSameString(string1,string2){
     let result = false;
@@ -44,21 +45,59 @@ function verifyIfSameString(string1,string2){
 
 
 var formId = document.getElementById('my_form');
-var radioSexeId = document.querySelectorAll('#sexe_masculin');
-var nameId = document.getElementById('nom');
-var textErrorForName = document.getElementById('ErrorInputSyntax');
+var radioSexeinputId = document.querySelectorAll('.selection_sexe');
+var nameInputId = document.getElementById('nom');
+var firstNameInputId = document.getElementById('prenom');
+var ageInputId = document.getElementById('age');
+var pseudoInputId = document.getElementById('pseudo');
+var mdpInputId = document.getElementById('mdp');
+var mdpConfirmationInputId = document.getElementById('mdp_confirmation');
+
+var toto = document.querySelector('.TextErrorInputSyntax');
+var textErrorForNameStyle = document.querySelector('.TextErrorInputSyntax').style;
+
 
 formId.addEventListener('submit',function(e){
-    /*alert(radioSexeId[1].checked);
-    if (radioSexeId[0].checked == false && radioSexeId[1].checked == false){
-        alert("veuillez selectionner un sexe");
-    }*/
 
-    let nameInputValue = nameId.value;
+
+    e.preventDefault();
+
+    if(radioSexeinputId[0].checked == false && radioSexeinputId[1].checked == false){
+        alert("erreur, veuillez selection une civilité");
+    }
+
+    let nameInputValue = nameInputId.value;
     if (verifyNameInput(nameInputValue) == false){
+        toto.classList.add("TextErrorInputSyntaxVisible");
+        textErrorForNameStyle.display = "inline-block"
         alert("erreur dans le champs nom");
     }
-  
+
+    let fisrtNameInputValue = firstNameInputId.value;
+    if (verifyNameInput(fisrtNameInputValue) == false){
+       alert("erreur dans le champs prenom");
+    }
+
+    let ageInputValue = ageInputId.value;
+    if(verifyAgeInput(ageInputValue) == false){
+       alert("Erreur age nom compris entre 5 et 140");
+    }
+
+    let pseudoInputValue = pseudoInputId.value;
+    if(verifyPseudoInput(pseudoInputValue) == false){
+       alert("Erreur dans le champs pseudo");
+    }
+
+    let mdpInputValue = mdpInputId.value;
+    if(verifyMdpInput(mdpInputValue) == false){
+       alert("Erreur dans le champs mot de passe");
+    }
+
+    let mdpConfirmationInputValue = mdpConfirmationInputId.value;
+    if(verifyIfSameString(mdpConfirmationInputValue,mdpInputValue) == false){
+       alert("Mdp non confirmé");
+    }
+
 })
 
 

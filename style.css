@@ -5,7 +5,12 @@
     background-color: red;
 }*/
 
-.ErrorInputSyntax{
+.TextErrorInputSyntax{
     color:red;
-    visibility: hidden;
+    display: none;
+}
+
+.TextErrorInputSyntaxVisible{
+    color:red;
+    display: inline-block;
 }
